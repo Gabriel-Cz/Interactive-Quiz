@@ -8,15 +8,15 @@
 
 <script>
 
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
   
   export default {
     methods: {
-      ...mapState({
-        modalState: state => state.modal.modalState,
-        isCorrect: state => state.modal.isCorrect
-      }),
+      ...mapActions(['getQuestions']),
     },
+    mounted() {
+      this.getQuestions();
+    }
   }
 
 </script>

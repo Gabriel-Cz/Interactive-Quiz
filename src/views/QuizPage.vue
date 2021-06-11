@@ -10,11 +10,15 @@
 <script>
 
 import QuizTest from '@/components/QuizComponents/QuizTest';
+import { mapActions } from 'vuex'
 
     export default {
         name: 'QuizPage',
         components: {
             QuizTest
+        },
+         methods: {
+             ...mapActions(['getQuestions'])
         },
     }
 </script>

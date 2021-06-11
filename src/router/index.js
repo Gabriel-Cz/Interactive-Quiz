@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import QuizTest from '../components/QuizComponents/QuizTest'
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,7 @@ const routes = [
   {
     path: '/quiz',
     name: 'QuizPage',
+    alias: ['/quiz?question=1', '/quiz?question=2', '/quiz?question=3',] ,
     children: [
       {
         path: '/complete',

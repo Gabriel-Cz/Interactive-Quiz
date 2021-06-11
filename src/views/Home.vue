@@ -10,7 +10,6 @@
       </router-link>
       </div>
     </div>
-    <router-view />
   </div>
 </template>
 
