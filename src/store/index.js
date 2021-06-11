@@ -59,7 +59,7 @@ const store = new Vuex.Store({
   },
   actions: {
     async getQuestions({commit, dispatch}) {
-      let response = await axios.get(process.env.API);
+      let response = await axios.get('https://opentdb.com/api.php?amount=10');
       const question = response.data.results[0]; 
       commit('setQuestions', response.data.results);
       commit('setCurrentQuestion', question);
