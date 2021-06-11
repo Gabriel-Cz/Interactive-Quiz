@@ -1,32 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="main">
+      <router-view :key="$route.query.question" />
     </div>
-    <router-view/>
   </div>
 </template>
 
+<script>
+
+import { mapState } from 'vuex'
+  
+  export default {
+    methods: {
+      ...mapState({
+        modalState: state => state.modal.modalState,
+        isCorrect: state => state.modal.isCorrect
+      }),
+    },
+  }
+
+</script>
+
 <style lang="scss">
+
+@use './assets/main.scss' as mixins;
+
+$appFont: 'Cursive', serif;
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $appFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .main {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    max-height: 100%;
+    min-height: 100vh;
   }
 }
+
 </style>
