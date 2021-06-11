@@ -50,8 +50,12 @@ $bgButtonHover: rgba($color: rgb(55, 123, 224), $alpha: 1);
 
 .modal {
     @include mixins.media(xs) {
+        top: 0;
+        left: 0;
         width: 100vw;
         height: 100vh;
+        overflow-y: hidden;
+        padding-right: 15px;
     }
     position: absolute;
     top: 50%;

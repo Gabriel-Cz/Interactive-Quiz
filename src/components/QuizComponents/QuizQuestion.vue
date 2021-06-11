@@ -19,7 +19,7 @@
 
 @use '../../assets/main.scss' as mixins;
 
-$fontQuestion: 22px 'Cursive';
+$fontQuestion: 22px 'serif';
 
 .question {
     display: flex;

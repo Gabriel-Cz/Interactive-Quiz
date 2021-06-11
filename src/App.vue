@@ -25,7 +25,7 @@ import { mapState } from 'vuex'
 
 @use './assets/main.scss' as mixins;
 
-$appFont: 'Cursive', serif;
+$appFont: serif;
 
 #app {
   font-family: $appFont;
